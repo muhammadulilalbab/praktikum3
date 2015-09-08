@@ -17,33 +17,39 @@ import java.util.Scanner;
 public class No3{
 	public static void main (String [] args)
 	{
-		
+		/*variable */
 		int TabInt[] = new int[10];
-		int count=0,i,X;
+		int count=0,i,X, counter=0;
+		
+		/* Algorithm */
 		No3 no3 = new No3();
 		Scanner input = new Scanner(System.in);
-		X= input.nextInt();
-		while(X>=0 || count==99)
+		do
 		{
-			for(i=0;i<10;i++)
+			X= input.nextInt();
+			if(X>=0)
 			{
-				TabInt[i] =TabInt[i]+no3.arrCounter(i,X);			
-			}			
+				counter++;
+				for(i=0;i<10;i++)
+				{
+					TabInt[i] =TabInt[i]+no3.arrCounter(i,X);			
+				}	
+			}
 			count++;
-			X= input.nextInt();		
-		}
-		if(count==0)
+		}while(X>=0 && count<100);	
+		
+		/* output */
+		if(counter==0)
 		{
-			System.out.println(0);
+			System.out.println(counter);
 		} else 
 		{
-			System.out.println(count);
+			System.out.println(counter);
 			for(i=0;i<10;i++)
 			{
 				if(TabInt[i]>0)
 				{
-					System.out.println(i+" : "+TabInt[i]); 
-					//printf("%d : %d \n",i,TabAngka[i]);
+					System.out.println(i+" : "+TabInt[i]);
 				}
 			}
 		}
